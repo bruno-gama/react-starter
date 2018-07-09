@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<Box
+  bg="teal"
+  color="white"
+  px={4}
+  py={5}
+  theme={
+    Object {
+      "breakpoints": Array [
+        "40em",
+        "52em",
+        "64em",
+      ],
+      "fontSizes": Array [
+        12,
+        14,
+        16,
+        20,
+        24,
+        32,
+        48,
+        64,
+        96,
+        128,
+      ],
+      "space": Array [
+        0,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+      ],
+    }
+  }
+>
+  <Heading
+    fontSize={
+      Array [
+        4,
+        5,
+        6,
+      ]
+    }
+    fontWeight="bold"
+    is="h1"
+    lineHeight={1.25}
+    m={0}
+  >
+    You are beautiful
+  </Heading>
+  <Heading
+    fontSize={
+      Array [
+        3,
+        4,
+        5,
+      ]
+    }
+    fontWeight="bold"
+    is="h2"
+    lineHeight={1.25}
+    m={0}
+  >
+    Have a nice day
+  </Heading>
+</Box>
+`;
