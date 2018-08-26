@@ -5,5 +5,5 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - .:/var/www/uichallenge
-    command: yarn serve
+      - .:/var/www/app
+    command: yarn start
