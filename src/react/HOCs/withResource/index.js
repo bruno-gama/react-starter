@@ -1,34 +1,34 @@
 // @flow
 import React from 'react'
-import type { ComponentType } from 'react'
+import type { Component, ComponentType, ElementConfig } from 'react'
 
 import { newValues } from '../../../helpers/compareObjects.js'
 
-type Props = {
-  params?: Object,
-}
-
 type State = { data: mixed, error: mixed }
 
-export const withResource = (
-  get: (?Object) => Promise<mixed>,
-  propName: string
-) => (WrappedComponent: ComponentType<Props>) => {
-  return class withResource extends React.Component<Props, State> {
-    static defaultProps = {
-      params: {},
-    }
+type ResourceError = {}
 
-    constructor(props: Props) {
-      super(props)
-      this.state = { data: null, error: null }
-    }
+export const withResource = <Q: {}, D: {}>(get: Q => Promise<D>) => <
+  P: {},
+  C: ComponentType<P>
+>(
+  WrappedComponent: C
+) => {
+  return class withResource extends React.Component<
+    $Diff<
+      P,
+      { data: D | void, resourceError: ResourceError | void, params: Q | void }
+    >,
+    State
+  > {
+    defaultProps = { params: {} }
+    state = { data: null, error: null }
 
     componentDidMount() {
       this.fetch()
     }
 
-    componentDidUpdate(prevProps: Props) {
+    componentDidUpdate(prevProps: P) {
       if (newValues(this.props.params, prevProps.params).length) {
         this.setState({ data: null })
         this.fetch()
@@ -53,9 +53,10 @@ export const withResource = (
     render() {
       const passedProps = {
         ...this.props,
-        [propName]: this.state.data,
+        data: this.state.data,
         resourceError: this.state.error,
       }
+
       return <WrappedComponent {...passedProps} />
     }
   }
