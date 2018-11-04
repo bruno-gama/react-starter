@@ -8,10 +8,9 @@ const render = Component => mount(Component)
 
 describe('WithResource HOC', function() {
   test('renders', function() {
-    const ComponentWithResource = withResource(
-      () => Promise.resolve({}),
-      'testData'
-    )(MockChild)
+    const ComponentWithResource = withResource(() => Promise.resolve({}))(
+      MockChild
+    )
 
     expect(render(<ComponentWithResource />)).toBeDefined()
   })
@@ -21,7 +20,7 @@ describe('WithResource HOC', function() {
     const ComponentWithResource = withResource(params => {
       calledParams = params
       return Promise.resolve({})
-    }, 'testData')(MockChild)
+    })(MockChild)
 
     render(<ComponentWithResource params={{ test: true }} />)
 
@@ -33,7 +32,7 @@ describe('WithResource HOC', function() {
     const ComponentWithResource = withResource(() => {
       called++
       return Promise.resolve({})
-    }, 'testData')(MockChild)
+    })(MockChild)
 
     const component = render(<ComponentWithResource params={{ test: 1 }} />)
     component.setProps({ params: { test: 2 } })
@@ -48,7 +47,7 @@ describe('WithResource HOC', function() {
     const ComponentWithResource = withResource(() => {
       called++
       return Promise.resolve({})
-    }, 'testData')(MockChild)
+    })(MockChild)
 
     const component = render(<ComponentWithResource params={{ test: 1 }} />)
     component.setProps({ otherProp: { test: 2 } })
@@ -59,14 +58,13 @@ describe('WithResource HOC', function() {
   })
 
   test('passes the state as a prop with the chosen name', function() {
-    const ComponentWithResource = withResource(
-      () => Promise.resolve({}),
-      'testData'
-    )(MockChild)
+    const ComponentWithResource = withResource(() => Promise.resolve({}))(
+      MockChild
+    )
 
     const Component = render(<ComponentWithResource />).setState({
       data: { test: 'test' },
     })
-    expect(Component.find(MockChild).prop('testData')).toEqual({ test: 'test' })
+    expect(Component.find(MockChild).prop('data')).toEqual({ test: 'test' })
   })
 })

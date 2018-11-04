@@ -9,19 +9,13 @@ type State = { data: mixed, error: mixed }
 type ResourceError = {}
 
 export const withResource = <Q: {}, D: {}>(get: Q => Promise<D>) => <
-  P: {},
+  P: { params: Q },
   C: ComponentType<P>
 >(
   WrappedComponent: C
 ) => {
-  return class withResource extends React.Component<
-    $Diff<
-      P,
-      { data: D | void, resourceError: ResourceError | void, params: Q | void }
-    >,
-    State
-  > {
-    defaultProps = { params: {} }
+  return class withResource extends React.Component<P, State> {
+    static defaultProps = { params: {} }
     state = { data: null, error: null }
 
     componentDidMount() {
