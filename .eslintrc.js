@@ -7,7 +7,6 @@ module.exports = {
     'eslint:recommended',
     'plugin:flowtype/recommended',
     'plugin:react/recommended',
-    'plugin:jsx-control-statements/recommended',
     'plugin:prettier/recommended',
   ],
   parser: 'babel-eslint',
