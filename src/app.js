@@ -6,6 +6,7 @@ import { Provider } from 'rebass'
 
 import { theme } from './styles/theme.js'
 import Main from './react/pages/Main'
+import ErrorBoundary from './react/components/ErrorBoundary'
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -42,8 +43,10 @@ const container = document.getElementById('app')
 if (container) {
   render(
     <Provider theme={theme}>
-      <GlobalStyle />
-      <Main />
+      <ErrorBoundary>
+        <GlobalStyle />
+        <Main />
+      </ErrorBoundary>
     </Provider>,
     container
   )
