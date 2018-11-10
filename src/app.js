@@ -1,13 +1,13 @@
 // @flow
 import React from 'react'
 import { render } from 'react-dom'
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import { Provider } from 'rebass'
 
 import { theme } from './styles/theme.js'
 import Main from './react/pages/Main'
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 16px;
@@ -39,10 +39,12 @@ injectGlobal`
 `
 
 const container = document.getElementById('app')
-if (container)
+if (container) {
   render(
     <Provider theme={theme}>
+      <GlobalStyle />
       <Main />
     </Provider>,
     container
   )
+}
