@@ -9,9 +9,12 @@ type State = { error: boolean }
 class ErrorBoundary extends React.Component<Props, State> {
   state = { error: false }
 
+  static getDerivedStateFromError() {
+    return { error: true }
+  }
+
   componentDidCatch<T>(error: Error, info: T) {
     console.log('Error caught in error boundary:', error, info)
-    this.setState({ error: true })
   }
 
   render() {

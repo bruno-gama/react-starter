@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders correctly 1`] = `
-<.sc-bdVaJa
+<Box
   bg="teal"
   color="white"
   px={4}
   py={5}
 >
-  <.sc-VigVT
+  <Heading
     fontSize={
       Array [
         4,
@@ -21,8 +21,8 @@ exports[`Header renders correctly 1`] = `
     m={0}
   >
     You are beautiful
-  </.sc-VigVT>
-  <.sc-VigVT
+  </Heading>
+  <Heading
     fontSize={
       Array [
         3,
@@ -36,6 +36,6 @@ exports[`Header renders correctly 1`] = `
     m={0}
   >
     Have a nice day
-  </.sc-VigVT>
-</.sc-bdVaJa>
+  </Heading>
+</Box>
 `;
