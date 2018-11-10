@@ -54,6 +54,7 @@
     "html-webpack-plugin": "^4.0.0-alpha",
     "jest": "23.6.0",
     "loader": "^2.1.1",
+    "prettier": "^1.15.1",
     "rimraf": "^2.6.2",
     "uglifyjs-webpack-plugin": "^1.2.6",
     "webpack": "^4.12.0",

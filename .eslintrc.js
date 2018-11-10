@@ -18,7 +18,7 @@ module.exports = {
     },
     sourceType: 'module',
   },
-  plugins: ['flowtype', 'react', 'jsx-control-statements'],
+  plugins: ['flowtype', 'react'],
   rules: {
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
