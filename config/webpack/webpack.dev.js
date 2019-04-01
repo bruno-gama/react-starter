@@ -15,6 +15,8 @@ module.exports = {
     ],
   },
 
+  devServer: { historyApiFallback: true },
+
   entry: {
     app: './src/app.js',
     vendor: ['react', 'react-dom', 'styled-components'],
@@ -22,6 +24,7 @@ module.exports = {
 
   output: {
     filename: '[name].[chunkhash].js',
+    publicPath: '/',
     path: path.resolve(__dirname, '../../dist'),
   },
 

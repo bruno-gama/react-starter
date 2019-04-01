@@ -23,6 +23,7 @@ module.exports = {
 
   output: {
     filename: '[name].[chunkhash].js',
+    publicPath: '/',
     path: path.resolve(__dirname, '../../dist'),
   },
 
