@@ -50,7 +50,7 @@
     "enzyme-to-json": "^3.3.4",
     "eslint-config-prettier": "^2.9.0",
     "flow-bin": "0.86.0",
-    "flow-typed": "2.4.0",
+    "flow-typed": "^2.5.2",
     "html-webpack-plugin": "^4.0.0-alpha",
     "jest": "^24.8.0",
     "loader": "^2.1.1",
