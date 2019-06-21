@@ -31,4 +31,10 @@ module.exports = {
     ],
     'no-throw-literal': 'error',
   },
+  overrides: [
+    {
+      files: ['**/test.js'],
+      env: { jest: true },
+    },
+  ],
 }

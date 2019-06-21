@@ -2,7 +2,7 @@ import React from 'react'
 import { render, cleanup, waitForDomChange } from '@testing-library/react'
 import 'regenerator-runtime'
 
-import { withResource } from '../../../src/react/HOCs/withResource'
+import { withResource } from './'
 
 const MockChild = ({ testData }) => <div>{testData}</div>
 

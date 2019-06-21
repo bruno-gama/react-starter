@@ -1,8 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  testRegex: '(/tests/[^(helpers|.)].*|(\\.|/)(test|spec))\\.js$',
   rootDir: path.resolve(__dirname, '../../'),
-  setupFiles: ['<rootDir>/tests/helpers/setup.js'],
-  setupFilesAfterEnv: ['<rootDir>/tests/helpers/setupAfterEnv.js'],
+  setupFiles: [path.resolve(__dirname, './setup.js')],
+  setupFilesAfterEnv: [path.resolve(__dirname, './setupAfterEnv.js')],
 }
