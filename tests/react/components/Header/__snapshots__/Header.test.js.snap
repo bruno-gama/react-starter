@@ -1,41 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders correctly 1`] = `
-<Box
-  bg="teal"
-  color="white"
-  px={4}
-  py={5}
->
-  <Heading
-    fontSize={
-      Array [
-        4,
-        5,
-        6,
-      ]
-    }
-    fontWeight="bold"
-    is="h1"
-    lineHeight={1.25}
-    m={0}
+<div>
+  <div
+    class="sc-bdVaJa gsdBKM"
   >
-    You are beautiful
-  </Heading>
-  <Heading
-    fontSize={
-      Array [
-        3,
-        4,
-        5,
-      ]
-    }
-    fontWeight="bold"
-    is="h2"
-    lineHeight={1.25}
-    m={0}
-  >
-    Have a nice day
-  </Heading>
-</Box>
+    <h1
+      class="sc-VigVT fBDaOQ"
+    >
+      You are beautiful
+    </h1>
+    <h2
+      class="sc-VigVT gNCaSo"
+    >
+      Have a nice day
+    </h2>
+  </div>
+</div>
 `;
