@@ -47,6 +47,7 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.0",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-jest": "^22.7.0",
     "flow-bin": "0.102.0-rc",
     "flow-typed": "^2.5.2",
     "html-webpack-plugin": "^4.0.0-alpha",
