@@ -4,6 +4,7 @@ import 'regenerator-runtime'
 
 import { withResource } from './'
 
+// eslint-disable-next-line react/prop-types
 const MockChild = ({ testData }) => <div>{testData}</div>
 
 const ComponentWithResource = withResource(
@@ -15,7 +16,7 @@ const ComponentWithResource = withResource(
 describe('WithResource HOC', function() {
   afterEach(cleanup)
 
-  test('Calls resource function and passes received data to enhanced component', async () => {
+  it('calls resource function and passes received data to enhanced component', async () => {
     const { container } = render(
       <ComponentWithResource params={{ times: 1 }} />
     )
@@ -26,7 +27,7 @@ describe('WithResource HOC', function() {
     )
   })
 
-  test('Fires another request and updates the component when params prop changes', async () => {
+  it('fires another request and updates the component when params prop changes', async () => {
     const { container, rerender } = render(
       <ComponentWithResource params={{ times: 1 }} />
     )
